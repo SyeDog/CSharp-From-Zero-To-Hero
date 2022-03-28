@@ -9,27 +9,18 @@ namespace BootCamp.Chapter
     {
         static void Main(string[] args)
         {
-            string personOneFirstName;
-            string personOneLastName;
-            int personOneAge;
-            double personOneHeight;
-            double personOneWeight;
-            double personOneBMI;
-
-            string personTwoFirstName;
-            string personTwoLastName;
-            int personTwoAge;
-            double personTwoHeight;
-            double personTwoWeight;
-            double personTwoBMI;
+            Lesson3.Demo();
 
 
 
 
-            fullNameGenerator(personOneFirstName, personOneLastName);
-            goodBye();
 
 
+            //welcomeGenerator(welcomeMessage);
+
+            //goodBye();
+
+            /*
             Console.WriteLine("This is your friendly BMI Checker!");
             Console.Write("Please Input person ones first name. ");
             personOneFirstName = Console.ReadLine();
@@ -72,18 +63,26 @@ namespace BootCamp.Chapter
 
             Console.WriteLine("Thanks for using my BMI Checker!");
 
-
-            static string fullNameGenerator(string firstName, string lastName)
+            static string welcomeGenerator(string welcomeMessage)
             {
-                string name = firstName + " " + lastName;
-                return fullName;
+                Console.WriteLine(welcomeMessage);
+                return welcomeMessage;
             }
+            
+            static string nameGenerator()
+            {
+                Console.Write("Please input your full name: ");
+                fullName = Console.ReadLine();
+                return string fullName;
+            }
+            
 
             static string goodBye(string name)
             {
                 string goodByeMessage = "Thank you for using my BMI Calculator " + name;
                 return goodByeMessage;
             }
+            */
         }
     }
 }

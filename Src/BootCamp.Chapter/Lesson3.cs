@@ -7,6 +7,7 @@ namespace BootCamp.Chapter
     public class Lesson3
     {
         static string fullName = "";
+        static string inputVariable = "";
         static int Age;
         static double Height;
         static double Weight;
@@ -28,10 +29,10 @@ namespace BootCamp.Chapter
             return;
         }
 
-        public static void inputPromptText (string promptMessage, string fullName)
+        public static void inputPromptText (string promptMessage, string inputVariable)
         {
             Console.Write(promptMessage);
-            fullName = Console.ReadLine();
+            inputVariable = Console.ReadLine();
             Console.WriteLine(fullName);
         }
 

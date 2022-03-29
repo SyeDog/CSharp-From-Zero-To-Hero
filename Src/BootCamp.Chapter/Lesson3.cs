@@ -8,16 +8,16 @@ namespace BootCamp.Chapter
     public class Lesson3
     {
         public static string fullName = "";
-        static Int32 Age;
-        static float height;
-        static float weight;
-        static float BMI;
+        public static Int32 Age;
+        public static float height;
+        public static float weight;
+        public static float BMI;
 
         public static void Demo()
         {
             greetingMaker();
             dataCollection();
-            calculateBMI(height, weight);
+            calculateBMI(weight, height);
             informationDisplay();
         }
 
@@ -69,21 +69,21 @@ namespace BootCamp.Chapter
         public static float heightTaker()
         {
             inputPromptText("Please input your Height in meters: ");
-            height = Console.ReadLine();
+            height = float.Parse(Console.ReadLine());
             return height;
         }
 
         public static float weightTaker()
         {
             inputPromptText("Please input your Weight in kg: ");
-            weight = (Console.ReadLine());
+            weight = float.Parse(Console.ReadLine());
             return weight;
         }
 
 
 
 
-        public static double calculateBMI(double height, double weight)
+        public static float calculateBMI(float weight, float height)
         {
             BMI = (weight / height / height);
             return BMI;

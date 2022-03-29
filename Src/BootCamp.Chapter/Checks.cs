@@ -22,7 +22,7 @@ namespace BootCamp.Chapter
 
         public static string PromptString(string message)
         {
-            Lesson3.inputPromptText("Hello Checks");
+            Lesson3.inputPromptText("Check String");
             return "";
         }
 
@@ -34,7 +34,7 @@ namespace BootCamp.Chapter
 
         public static float CalculateBmi(float weight, float height)
         {
-            Lesson3.calculateBMI();
+            Lesson3.calculateBMI(Lesson3.weight, Lesson3.height);
             return 0;
         }
     }

@@ -8,10 +8,10 @@ namespace BootCamp.Chapter
     public class Lesson3
     {
         public static string fullName = "";
-        static int Age;
-        static double height;
-        static double weight;
-        static double BMI;
+        static Int32 Age;
+        static float height;
+        static float weight;
+        static float BMI;
 
         public static void Demo()
         {
@@ -43,22 +43,43 @@ namespace BootCamp.Chapter
         //Handles collection of the variables for this BMI calculator
         public static void dataCollection()
         {
-            inputPromptText("Please input your full name: ");
-            fullName = Convert.ToString(Console.ReadLine());
-
-            inputPromptText("Please input your age in years: ");
-            Age = Convert.ToInt32(Console.ReadLine());
-
-            inputPromptText("Please input your Height in meters: ");
-            height = Convert.ToDouble(Console.ReadLine());
-
-            inputPromptText("Please input your Weight in kg: ");
-            weight = Convert.ToDouble(Console.ReadLine());
-
+            nameTaker();
+            ageTaker();
+            heightTaker();
+            weightTaker();
             Console.WriteLine("");
-
             return;
         }
+
+
+        public static string nameTaker()
+        {
+            inputPromptText("Please input your full name: ");
+            fullName = Convert.ToString(Console.ReadLine());
+            return fullName;
+        }
+
+        public static Int32 ageTaker()
+        {
+            inputPromptText("Please input your age in years: ");
+            Age = Convert.ToInt32(Console.ReadLine());
+            return Age;
+        }
+
+        public static float heightTaker()
+        {
+            inputPromptText("Please input your Height in meters: ");
+            height = Console.ReadLine();
+            return height;
+        }
+
+        public static float weightTaker()
+        {
+            inputPromptText("Please input your Weight in kg: ");
+            weight = (Console.ReadLine());
+            return weight;
+        }
+
 
 
 

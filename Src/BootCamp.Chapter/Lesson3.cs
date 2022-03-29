@@ -1,44 +1,82 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Console = System.Console;
 
 namespace BootCamp.Chapter
 {
     public class Lesson3
     {
-        static string fullName = "";
-        static string inputVariable = "";
+        public static string fullName = "";
         static int Age;
-        static double Height;
-        static double Weight;
+        static double height;
+        static double weight;
         static double BMI;
-        static string welcomeMessage = "Welcome to the BMI calculator made by Syedog";
 
         public static void Demo()
         {
-            greetingMessage();
-            inputPromptText("Please input your full name: ", fullName);
-        
+            greetingMaker();
+            dataCollection();
+            calculateBMI(height, weight);
+            informationDisplay();
         }
 
 
 
-        public static void greetingMessage()
+        //Greeting makers function to introduce the program, only run ones for the two bmi checks
+        public static void greetingMaker()
         {
-            Console.WriteLine(welcomeMessage);
+            Console.WriteLine("Welcome to my BMI Checker, made by Syedog");
             return;
         }
 
-        public static void inputPromptText (string promptMessage, string inputVariable)
+
+
+        //This will type out the inputted string, usually used to ask for inputs from the user on the same line as the last
+        public static void inputPromptText (string promptMessage)
         {
             Console.Write(promptMessage);
-            inputVariable = Console.ReadLine();
-            Console.WriteLine(fullName);
         }
 
-        public static void inputPromptInt()
-        {
 
+
+        //Handles collection of the variables for this BMI calculator
+        public static void dataCollection()
+        {
+            inputPromptText("Please input your full name: ");
+            fullName = Convert.ToString(Console.ReadLine());
+
+            inputPromptText("Please input your age in years: ");
+            Age = Convert.ToInt32(Console.ReadLine());
+
+            inputPromptText("Please input your Height in meters: ");
+            height = Convert.ToDouble(Console.ReadLine());
+
+            inputPromptText("Please input your Weight in kg: ");
+            weight = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("");
+
+            return;
+        }
+
+
+
+        public static double calculateBMI(double height, double weight)
+        {
+            BMI = (weight / height / height);
+            return BMI;
+        }
+
+
+
+        public static void informationDisplay()
+        {
+            Console.WriteLine("Result for " + fullName + ": ");
+            Console.WriteLine("Age: " + Age + " Height: " + height + " Weight: " + weight);
+            Console.WriteLine("BMI Calculated to: " + Math.Round(BMI, 1));
+            Console.WriteLine("");
+            return;
         }
     }
 }

@@ -7,10 +7,14 @@ namespace BootCamp.Chapter
     internal class Lesson3
     {
         public static string fullName = "";
-        public static Int32 Age;
+        public static int age;
+        public static string ageValidationInput;
+        public static bool isVaildAge;
         public static float height;
         public static float weight;
         public static float BMI;
+        public static bool isNumber;
+        public static string ageValue;
 
         public static void Demo()
         {
@@ -55,14 +59,46 @@ namespace BootCamp.Chapter
         {
             inputPromptText("Please input your full name: ");
             fullName = Convert.ToString(Console.ReadLine());
-            return fullName;
+
+            if (string.IsNullOrEmpty(fullName))
+            {
+                Console.WriteLine("Name Cannot be Empty"); return "-";
+            }
+            else
+            {
+                return fullName;
+            }
         }
 
-        public static Int32 ageTaker()
+        public static string ageTaker()
         {
             inputPromptText("Please input your age in years: ");
-            Age = Convert.ToInt32(Console.ReadLine());
-            return Age;
+
+            ageValidationInput = Console.ReadLine();
+            age = ParseAge(ageValidationInput);
+
+            if (age == -1)
+            {
+                ageValue = "Age is Invalid";
+            }
+            else
+            {
+                ageValue = age.ToString();
+            }
+            return ageValue;
+
+            static int ParseAge(string ageValidationInput)
+            {
+                var isNumber = int.TryParse(ageValidationInput, out age);
+                Console.WriteLine(isNumber);
+                Console.WriteLine(age);
+
+                if (!isNumber) return age = -1;
+                bool isValidAge = age < 200 && age >= 0;
+                if (!isValidAge) return age = -1;
+                Console.WriteLine(age);
+                return age;
+            }
         }
 
         public static float heightTaker()
@@ -93,7 +129,7 @@ namespace BootCamp.Chapter
         public static void informationDisplay()
         {
             Console.WriteLine("Result for " + fullName + ": ");
-            Console.WriteLine("Age: " + Age + " Height: " + height + " Weight: " + weight);
+            Console.WriteLine("Age: " + ageValue + " Height: " + height + " Weight: " + weight);
             Console.WriteLine("BMI Calculated to: " + Math.Round(BMI, 1));
             Console.WriteLine("");
             return;

@@ -80,6 +80,7 @@ namespace BootCamp.Chapter1
             // ToDo: implement.
             ArrayChecker(array);
             IndexRemoverSpecific(array, newArray, index);
+            Console.Write("Array with removed Specific integer of " + Program.indexToRemove.ToString()); ;
             return newArray;
         }
 

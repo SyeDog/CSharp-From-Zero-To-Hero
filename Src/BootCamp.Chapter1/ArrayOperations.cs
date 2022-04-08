@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime;
+using System.Linq;
 
 namespace BootCamp.Chapter1
 {
@@ -47,7 +48,7 @@ namespace BootCamp.Chapter1
         {
             // ToDo: implement.
             ArrayChecker(array);
-            Array.Resize(ref array, array.Length-1);
+            Array.Resize(ref array, array.Length - 1);
             Console.Write("Array with removed last integer: ");
             ArrayPrinter(array);
             Console.WriteLine(" ");
@@ -74,10 +75,12 @@ namespace BootCamp.Chapter1
         /// <param name="array">Input array.</param>
         /// <param name="index">Index at which array element should be removed.</param>
         /// <returns>A new array with element removed at a given index. If an array is empty or null, returns input array.</returns>
-        public static int[] RemoveAt(int[] array, int index)
+        public static int[] RemoveAt(int[] array, int[] newArray, int index)
         {
             // ToDo: implement.
-            return array;
+            ArrayChecker(array);
+            IndexRemoverSpecific(array, newArray, index);
+            return newArray;
         }
 
         /// <summary>
@@ -136,14 +139,19 @@ namespace BootCamp.Chapter1
         public static int[] ArrayPrinter(int[] array)
         {
             Console.WriteLine("[{0}]", string.Join(", ", array));
-                return array;
+            return array;
         }
 
         public static int[] IndexRemoverFirst(int[] array, int[] newArray)
         {
-            Array.Copy(array, 1, newArray, 0, array.Length-1);
+            Array.Copy(array, 1, newArray, 0, array.Length - 1);
             return newArray;
         }
 
+        public static int[] IndexRemoverSpecific(int[] array, int[] newArray, int IndexToRemoveFromArray)
+        {
+            
+            return newArray;
+        }
     }
 }

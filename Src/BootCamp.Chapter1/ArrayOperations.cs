@@ -1,4 +1,7 @@
-﻿namespace BootCamp.Chapter1
+﻿using System;
+using System.Runtime;
+
+namespace BootCamp.Chapter1
 {
     public static class ArrayOperations
     {
@@ -10,6 +13,13 @@
         public static void Sort(int[] array)
         {
             // ToDo: implement.
+            ArrayChecker(array);
+            Array.Sort(array);
+            Console.Write("Sorted Array in ascending order: ");
+            ArrayPrinter(array);
+            Console.WriteLine(" ");
+
+
         }
 
         /// <summary>
@@ -20,6 +30,12 @@
         public static void Reverse(int[] array)
         {
             // ToDo: implement.
+            ArrayChecker(array);
+            Array.Reverse(array);
+            Console.Write("Sorted Array in Descending order: ");
+            ArrayPrinter(array);
+            Console.WriteLine(" ");
+
         }
 
         /// <summary>
@@ -27,20 +43,29 @@
         /// </summary>
         /// <param name="array">Input array.</param>
         /// <returns>A new array with the last element removed. If an array is empty or null, returns input array.</returns>
-        public static int[] RemoveLast(int[] array)
+        public static void RemoveLast(int[] array)
         {
             // ToDo: implement.
-            return array;
+            ArrayChecker(array);
+            Array.Resize(ref array, array.Length-1);
+            Console.Write("Array with removed last integer: ");
+            ArrayPrinter(array);
+            Console.WriteLine(" ");
         }
 
         /// <summary>
         /// Remove first element in array.
         /// </summary>
         /// <returns>A new array with the first element removed. If an array is empty or null, returns input array.</returns>
-        public static int[] RemoveFirst(int[] array)
+        public static void RemoveFirst(int[] array, int[] newArray)
         {
             // ToDo: implement.
-            return array;
+            ArrayChecker(array);
+            IndexRemoverFirst(array, newArray);
+            Console.Write("Array with removed first integer: ");
+            ArrayPrinter(newArray);
+            Console.WriteLine(" ");
+
         }
 
         /// <summary>
@@ -91,5 +116,34 @@
             // ToDo: implement.
             return array;
         }
+
+        public static int[] ArrayChecker(int[] array)
+        {
+            if (array == null || array.Length == 0)
+            {
+                Console.WriteLine("ERROR: Array was either Null or Empty");
+                return null;
+            }
+            else
+            {
+                Console.Write("Input Array is: ");
+                ArrayPrinter(array);
+                return array;
+            }
+        }
+
+
+        public static int[] ArrayPrinter(int[] array)
+        {
+            Console.WriteLine("[{0}]", string.Join(", ", array));
+                return array;
+        }
+
+        public static int[] IndexRemoverFirst(int[] array, int[] newArray)
+        {
+            Array.Copy(array, 1, newArray, 0, array.Length-1);
+            return newArray;
+        }
+
     }
 }

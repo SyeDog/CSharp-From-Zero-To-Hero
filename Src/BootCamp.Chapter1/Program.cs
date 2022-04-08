@@ -1,9 +1,17 @@
 ﻿namespace BootCamp.Chapter1
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        public static int[] numberList = { 5, 9, 4, 8, 3, 7 };
+        public static int[] newNumberListFirstRemoved = new int[numberList.Length - 1];
+
+        private static void Main(string[] args)
         {
+            ArrayOperations.Sort(numberList);
+            ArrayOperations.Reverse(numberList);
+            ArrayOperations.RemoveLast(numberList);
+            ArrayOperations.RemoveFirst(numberList, newNumberListFirstRemoved);
         }
     }
+
 }

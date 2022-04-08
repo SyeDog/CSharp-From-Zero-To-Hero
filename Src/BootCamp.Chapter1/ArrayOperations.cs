@@ -151,7 +151,7 @@ namespace BootCamp.Chapter1
 
         public static int[] IndexRemoverSpecific(int[] array, int[] newArray, int IndexToRemoveFromArray)
         {
-            
+            newArray = array.Where(x => x != IndexToRemoveFromArray).ToArray();
             return newArray;
         }
     }

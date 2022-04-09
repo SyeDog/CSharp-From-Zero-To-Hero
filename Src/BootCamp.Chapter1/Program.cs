@@ -14,7 +14,7 @@
         public static int intToAdd = 46;
         public static int elementFirstPosition = 0;
         public static int elementLastPosition = newNumberListAddedLast.Length - 1;
-        public static int elementSpecificPosition = 2;
+        public static int elementSpecificPosition = 4;
 
         private static void Main(string[] args)
         {

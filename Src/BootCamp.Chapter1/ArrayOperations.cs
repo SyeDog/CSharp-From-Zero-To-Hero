@@ -196,7 +196,12 @@ namespace BootCamp.Chapter1
         {
             for (int i = 0; i < newArray.Length; i++)
             {
-                if (i < indexWhereElementAdded) newArray[i] = array[i];
+                if (indexWhereElementAdded > newArray.Length - 1)
+                {
+                    Console.WriteLine("Error, your entered index is larger than the array length");
+                    return newArray;
+                }
+                else if (i < indexWhereElementAdded) newArray[i] = array[i];
                 else if (i == indexWhereElementAdded) newArray[i] = elementToAdd;
                 else newArray[i] = array[i - 1];
             }
